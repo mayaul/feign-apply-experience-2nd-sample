@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: feign-step2
+
+server:
+  port: 8080
+
+feign:
+  client:
+    config:
+      default: # @FeignClient 에서 name 값, 전역으로 설정하려면 default
+        connectTimeout: 5000
+        readTimeout: 2000
+        loggerLevel: FULL
+  okhttp:
+    enabled: true
+  httpclient:
+    enabled: false
+
+external-api:
+  http-bin: https://httpbin.org
+
+logging:
+  level:
+    io.github.mayaul: DEBUG
